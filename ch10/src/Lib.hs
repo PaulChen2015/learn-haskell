@@ -235,9 +235,9 @@ adder = do putStr "How many numbers?"
            putStrLn (show sum)
 
 getSum :: Int -> Int -> IO Int
-getSum cnt sum = do if cnt == 0 then
+getSum cnt sum = if cnt == 0 then
                       return sum
-                    else
-                      do x <- getLine
-                         let n = read x::Int
-                         getSum (cnt-1) (sum + n)
+                 else
+                    do x <- getLine
+                       let n = read x::Int
+                       getSum (cnt-1) (sum + n)
